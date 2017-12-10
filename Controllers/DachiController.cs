@@ -15,7 +15,7 @@ namespace Dojodachi.Controllers
             int? happiness = HttpContext.Session.GetInt32("happiness");
             int? meals = HttpContext.Session.GetInt32("meals");
             int? energy = HttpContext.Session.GetInt32("energy");
-            System.Console.WriteLine("Retriving data");
+            System.Console.WriteLine("Retrieving data");
             // Is each retrieved data from session equal to zero??
             if (fullness == null && happiness == null && meals == null && fullness == null && energy == null)
             {
@@ -38,10 +38,9 @@ namespace Dojodachi.Controllers
                 }
             if (fullness < 1 || happiness < 1)
                 {
-                    TempData["action"] = "O no! Your dojodachi is ded";
+                    TempData["action"] = "Oh no...Your dojodachi is dead";
                 }
-            ViewBag.Action = TempData["action"]; 
-            ViewBag.Example = "Hello World!";    
+            ViewBag.Action = TempData["action"];               
             return View("index");
         }
         [HttpPost]
