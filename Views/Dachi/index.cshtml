@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+         <meta charset="UTF-8">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"/>
+         <link rel="stylesheet" href="~/css/style.css"/>
+         <title>NinjaGold - Noondi</title>
+    </head>
+    <body>      
+            <div class="container">      
+                <!-- ===================== MAIN CONTAINER =================================================================== -->    
+                    <div class="header"> 
+                        <div class="header1">
+                            <h6>Fullness: @ViewBag.fullness</h6>
+                        </div> 
+                        <div class="header2">
+                            <h6>Happiness: @ViewBag.happiness</h6>
+                        </div> 
+                        <div class="header3">
+                            <h6>Meals: @ViewBag.meals</h6>
+                        </div> 
+                        <div class="header4">
+                            <h6>Energy: @ViewBag.energy</h6>
+                        </div>                                                             
+                    </div>
+                <!-- ===================== FORMS =================================================================== -->
+                               
+                <div class="box">
+                        <h4> Food </h4>
+                    <p>(5-10 fullness)</p>            
+                        <form action="/feed" method="post">
+                            <input type="hidden" name="place" value="cave" />
+                            <input type="submit" value="Feed.."/>
+                        </form>
+                    </div>
+                    <div class="box">
+                        <h4> Games </h4>
+                    <p>(5-10 happiness)</p>            
+                        <form action="/play" method="post">
+                           
+                            <input type="submit" value="Play.."/>
+                        </form>
+                    </div>
+                    <div class="box">
+                        <h4>Factory</h4>
+                        <p>( earns 1-3 meals)</p>
+                        <form action="/work" method="post">
+                            <input type="submit" value="Work.."/>
+                        </form>
+                    </div>
+                    <div class="box">
+                        <h4>Bedroom</h4>
+                        <p>(15 energy, -5 happiness)</p>                                  
+                        <form action="/sleep" method="post">
+                           <input type="submit" value="Sleep.."/>
+                        </form>                
+                    </div><br><br>
+                    <div class="reset">
+                        <form action="/clear" method="post">
+                        <input type="submit" value="Restart Game"/>
+                    </form>
+                    </div>                    
+                  
+                    <div class="activities">
+                            <h4>Dojodachi actions:</h4>            
+                            <p>@ViewBag.Action</p><br>
+                    </div>
+                </div>        
+    </body>
+</html>
+
